@@ -19,6 +19,7 @@ package site.ycsb.generator;
 
 /**
  * A generator that is capable of generating numeric values.
+ * 生成待操作的 key 值
  *
  */
 public abstract class NumberGenerator extends Generator<Number> {

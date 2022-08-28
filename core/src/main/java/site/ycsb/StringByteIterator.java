@@ -22,6 +22,7 @@ import java.util.Map;
 
 /**
  * A ByteIterator that iterates through a string.
+ * 一般性是用来生成 key-value中的value
  */
 public class StringByteIterator extends ByteIterator {
   private String str;

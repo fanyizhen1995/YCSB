@@ -27,7 +27,8 @@ import java.util.Properties;
  * should be constructed using a no-argument constructor, so we can
  * load it dynamically. Any argument-based initialization should be
  * done by init().
- * 
+ * workload 实例化后会被共享给所有 client 线程（多个 client 会操作一个 workload？）。
+ *
  * If you extend this class, you should support the "insertstart" property. This
  * allows the Client to proceed from multiple clients on different machines, in case
  * the client is the bottleneck. For example, if we want to load 1 million records from
@@ -36,6 +37,7 @@ import java.util.Properties;
  * client how many inserts to do. In the example above, both clients should have insertcount=500000.
  */
 public abstract class Workload {
+  // 这个是用于多个 client 场景的，告诉每个 client 插入数据的起始位置（如果不指定则会最后数据总量 < 想要插入的数据量）
   public static final String INSERT_START_PROPERTY = "insertstart";
   public static final String INSERT_COUNT_PROPERTY = "insertcount";
   

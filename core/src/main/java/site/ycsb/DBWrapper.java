@@ -29,6 +29,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
 /**
  * Wrapper around a "real" DB that measures latencies and counts return codes.
  * Also reports latency separately between OK and failed operations.
+ *
+ * 装饰器模式的思路，包上测时延和处理返回值的流程。
  */
 public class DBWrapper extends DB {
   private final DB db;

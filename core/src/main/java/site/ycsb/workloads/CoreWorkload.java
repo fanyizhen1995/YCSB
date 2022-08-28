@@ -29,6 +29,7 @@ import java.util.*;
  * The core benchmark scenario. Represents a set of clients doing simple CRUD operations. The
  * relative proportion of different kinds of operations, and other properties of the workload,
  * are controlled by parameters specified at runtime.
+ * 对于下一次操作的要选的值，会有个 generator 来即时生成 sequence 中的下一个值。
  * <p>
  * Properties to control the client:
  * <UL>

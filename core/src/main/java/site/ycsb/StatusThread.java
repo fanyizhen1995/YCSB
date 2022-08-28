@@ -27,6 +27,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * A thread to periodically show the status of the experiment to reassure you that progress is being made.
+ * 用于定时向使用者展示当前全局状态的线程
  */
 public class StatusThread extends Thread {
   // Counts down each of the clients completing

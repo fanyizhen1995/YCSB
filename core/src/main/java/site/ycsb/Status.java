@@ -29,6 +29,7 @@ public class Status {
    * @param description A description of the status.
    */
   public Status(String name, String description) {
+    // 这个 super 个了啥？
     super();
     this.name = name;
     this.description = description;

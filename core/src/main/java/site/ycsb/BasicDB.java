@@ -26,6 +26,7 @@ import java.util.concurrent.locks.LockSupport;
 
 /**
  * Basic DB that just prints out the requested operations, instead of doing them against a database.
+ * 也是个用于 mock 的 fake db
  */
 public class BasicDB extends DB {
   public static final String COUNT = "basicdb.count";

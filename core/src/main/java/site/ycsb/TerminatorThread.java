@@ -24,6 +24,8 @@ import java.util.Collection;
  *
  * The maximum execution time passed is assumed to be in seconds.
  *
+ * 如果执行时间超长了，该线程会中断所有 client。
+ *
  */
 public class TerminatorThread extends Thread {
 

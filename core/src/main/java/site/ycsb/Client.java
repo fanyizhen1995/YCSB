@@ -36,6 +36,8 @@ import java.util.concurrent.TimeUnit;
 /**
  * Turn seconds remaining into more useful units.
  * i.e. if there are hours or days worth of seconds, use them.
+ *
+ * 输入 load / run 的启动入口
  */
 final class RemainingFormatter {
   private RemainingFormatter() {
@@ -294,6 +296,7 @@ public final class Client {
       targetperthreadperms = targetperthread / 1000.0;
     }
 
+    // 就是提醒用户这个程序还在跑的线程
     Thread warningthread = setupWarningThread();
     warningthread.start();
 
@@ -301,6 +304,7 @@ public final class Client {
 
     Workload workload = getWorkload(props);
 
+    // HTrace is a tracing framework intended for use with distributed systems written in java.
     final Tracer tracer = getTracer(props, workload);
 
     initWorkload(props, warningthread, workload, tracer);
@@ -514,6 +518,7 @@ public final class Client {
     System.err.println();
     System.err.println("Loading workload...");
     try {
+      // 自定义 workload 文件
       Class workloadclass = classLoader.loadClass(props.getProperty(WORKLOAD_PROPERTY));
 
       return (Workload) workloadclass.newInstance();

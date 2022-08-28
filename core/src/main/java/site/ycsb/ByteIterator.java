@@ -25,6 +25,8 @@ import java.util.Iterator;
  * YCSB-specific buffer class.  ByteIterators are designed to support
  * efficient field generation, and to allow backend drivers that can stream
  * fields (instead of materializing them in RAM) to do so.
+ *
+ * 用于生成 field 值的，替代用 string，因为 string 性能问题（用 byte[] 替代 StringBuilder）
  * <p>
  * YCSB originially used String objects to represent field values.  This led to
  * two performance issues.

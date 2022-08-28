@@ -32,6 +32,7 @@ import static java.util.concurrent.TimeUnit.MICROSECONDS;
 
 /**
  * Basic DB that just prints out the requested operations, instead of doing them against a database.
+ * 用于 mock 的 fake db
  */
 public class GoodBadUglyDB extends DB {
   public static final String SIMULATE_DELAY = "gbudb.delays";

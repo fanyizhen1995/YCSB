@@ -23,6 +23,7 @@ import java.util.Properties;
 
 /**
  * Creates a DB layer by dynamically classloading the specified DB class.
+ * 通过 DB 工厂创建 db 实例
  */
 public final class DBFactory {
   private DBFactory() {
@@ -35,6 +36,7 @@ public final class DBFactory {
     DB ret;
 
     try {
+      // 不同 db 对应不同的实现类，所以直接从类文件来创建实例
       Class dbclass = classLoader.loadClass(dbname);
 
       ret = (DB) dbclass.newInstance();
@@ -45,6 +47,7 @@ public final class DBFactory {
 
     ret.setProperties(properties);
 
+    // 在 db 上包上测试时间，处理返回值的通用方法
     return new DBWrapper(ret, tracer);
   }
 

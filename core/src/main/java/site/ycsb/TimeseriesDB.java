@@ -35,6 +35,7 @@ import java.util.concurrent.TimeUnit;
  *
  * @implSpec It's vital to call <tt>super.init()</tt> when overwriting the init method
  * to correctly initialize the workload-parsing.
+ * 对时序 DB 的支持，提供了不同于其他普通 db 的对外接口。
  */
 public abstract class TimeseriesDB extends DB {
 

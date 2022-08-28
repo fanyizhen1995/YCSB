@@ -30,6 +30,8 @@ import java.util.Vector;
  * load it dynamically. Any argument-based initialization should be
  * done by init().
  *
+ * 对于要被性能测试的数据库的抽象层，各个数据库都要实现其中这些方法。
+ *
  * Note that YCSB does not make any use of the return codes returned by this class.
  * Instead, it keeps a count of the return values and presents them to the user.
  *
@@ -66,6 +68,7 @@ public abstract class DB {
   /**
    * Initialize any state for this DB.
    * Called once per DB instance; there is one DB instance per client thread.
+   * 每个 Client 一个 DB 实例，初始化连接流程每个 Client 都要走一遍。
    */
   public void init() throws DBException {
   }

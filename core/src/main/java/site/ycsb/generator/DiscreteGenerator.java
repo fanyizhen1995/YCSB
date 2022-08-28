@@ -25,6 +25,7 @@ import static java.util.Objects.requireNonNull;
 
 /**
  * Generates a distribution by choosing from a discrete set of values.
+ * 用于选择哪种操作（可以通过 weight 来设置操作比重）
  */
 public class DiscreteGenerator extends Generator<String> {
   private static class Pair {
