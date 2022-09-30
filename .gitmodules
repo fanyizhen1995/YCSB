@@ -1,0 +1,3 @@
+[submodule "hijedis/src/main/jna/hiredis"]
+	path = hijedis/src/main/jna/hiredis
+	url = git@github.com:redis/hiredis.git
